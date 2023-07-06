@@ -26,18 +26,17 @@ spec:
       storage: 20Gi
 ---
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: sdvdemo-mysql
   labels:
     app: sdvdemo
 spec:
+  serviceName: mysql-service
   selector:
     matchLabels:
       app: sdvdemo
       tier: mysql
-  strategy:
-    type: Recreate
   template:
     metadata:
       labels:
