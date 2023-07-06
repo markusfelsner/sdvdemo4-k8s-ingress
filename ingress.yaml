@@ -3,7 +3,6 @@ kind: Ingress
 metadata:
   name: sdvdemo
 spec:
-  ingressClassName: nginx
   rules:
   - http:
       paths:
@@ -11,6 +10,6 @@ spec:
           service:
             name: frontend-service
             port:
-              number: 8888
+              number: 80
         path: /
         pathType: Prefix
