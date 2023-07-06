@@ -1,0 +1,35 @@
+apiVersion: extensions/v1beta1
+
+kind: Ingress
+
+metadata:
+
+  annotations:
+
+    nginx.ingress.kubernetes.io/backend-protocol: HTTP
+
+  name: sdvdemo #Name des Pods für den Ingress ermöglicht werden soll
+
+  namespace: default #Namespace, wo der Pod liegt
+
+spec:
+
+  ingressClassName: nginx
+
+  rules:
+
+  - host: sdvdemo.cpclie.de #DNS name
+
+    http:
+
+      paths:
+
+      - backend:
+
+          serviceName: sdvdemo #Name des Pods für den Ingress ermöglicht werden soll
+
+          servicePort: 8080
+
+        path: /
+
+        pathType: Prefix
