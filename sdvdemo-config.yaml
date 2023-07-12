@@ -5,7 +5,7 @@ metadata:
 data:
   MYSQL_ROOT_PASSWORD: Sommer123456
   MYSQL_DATABASE: sdvdemodatabase
-  MYSQL_USER: root
+  MYSQL_USER: markusfelsner
   MYSQL_PASSWORD: Sommer123456
   MYSQL_DBHOST: mysql-service
   
