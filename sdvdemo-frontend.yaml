@@ -56,7 +56,19 @@ spec:
         tier: frontend
     spec:
       containers:
-      - image: markusfelsner/sdvdemo-frontend:1.0
+      - image: markusfelsner/sdvdemo-config:1.15
         name: sdvdemo
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: "Sommer123456"
+        - name: MYSQL_DATABASE
+          value: "sdvdemodatabase"
+        - name: MYSQL_USER
+          value: "root"
+        - name: MYSQL_PASSWORD
+          value: "Sommer123456"
+        - name: MYSQL_DBHOST
+          value: "mysql-service"
+        
         ports:
           - containerPort: 8888
