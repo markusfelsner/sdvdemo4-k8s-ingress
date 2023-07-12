@@ -1,0 +1,27 @@
+apiVersion: v1
+data:
+  MYSQL_ROOT_PASSWORD: "$MYSQL_ROOT_PASSWORD"
+  MYSQL_DATABASE: "$MYSQL_DATABASE"
+  MYSQL_USER: "$MYSQL_USER"
+  MYSQL_PASSWORD: "$MYSQL_PASSWORD"
+  MYSQL_DBHOST: "$MYSQL_DBHOST"
+  MYSQL_DBPORT: "$MYSQL_DBPORT"
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: settings
+
+
+  env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: "Sommer123456"
+        - name: MYSQL_DATABASE
+          value: sdvdemodatabase
+        - name: MYSQL_USER
+          value: root
+        - name: MYSQL_PASSWORD
+          value: "Sommer123456"
+        - name: MYSQL_DBHOST
+          value: "mysql-service"
+        - name: MYSQL_DBPORT
+          value: "3306"
