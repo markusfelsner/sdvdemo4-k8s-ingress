@@ -60,15 +60,29 @@ spec:
         name: sdvdemo
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: "Sommer123456"
+          valueFrom:
+            configMapKeyRef:
+              name: sdvdemo-config
+              key: MYSQL_ROOT_PASSWORD
         - name: MYSQL_DATABASE
-          value: "sdvdemodatabase"
+          valueFrom:
+              configMapKeyRef:
+                name: sdvdemo-config
+                key: MYSQL_DATABASE          
         - name: MYSQL_USER
-          value: "root"
+          valueFrom:
+              configMapKeyRef:
+                name: sdvdemo-config
+                key: MYSQL_USER          
         - name: MYSQL_PASSWORD
-          value: "Sommer123456"
+          valueFrom:
+              configMapKeyRef:
+                name: sdvdemo-config
+                key: MYSQL_PASSWORD
         - name: MYSQL_DBHOST
-          value: "mysql-service"
-        
+          valueFrom:
+                configMapKeyRef:
+                  name: sdvdemo-config
+                  key: MYSQL_DBHOST            
         ports:
           - containerPort: 8888
